@@ -1,9 +1,8 @@
 # Vitamin-D Murine Microbiome and Single-cell Analysis Study
 
 ## Overview
-This respository contains code and analysis to replicate the findings in Ryan, et al.
+This respository contains code and analysis to replicate the single-cell analysis findings in Ryan, et al.
 Here, the effets of a Vitamin D-restricted diet on the murine oral microbiome and gingival/buccal transcriptomics were investigated.
-
 
 ## Contents
 * The raw_data folder contains the count matrix files generated via BeeNet software package

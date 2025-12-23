@@ -5,6 +5,25 @@
 #          analysis, functional annotation, clustering, pathway analysis
 #===============================================================================
 
+### Packages
+#===============================================================================
+library(dplyr)
+library(Seurat)
+library(ggplot2)
+library(DropletUtils)
+library(clusterProfiler)
+library(glmGamPoi)
+library(org.Mm.eg.db)
+library(enrichplot)
+library(BiocManager)
+library(here)
+library(SeuratExtend)
+library(devtools)
+set.seed(123)
+#===============================================================================
+
+
+
 ### Subset the different tissues, ging
 #===============================================================================
 ging_epi <- subset(m_sob.list_mms_ging,
@@ -25,7 +44,6 @@ ging_skm <- subset(m_sob.list_mms_ging,
 ging_sm <- subset(m_sob.list_mms_ging,
                   m_sob.list_mms_ging$coarse_ann == c('Smooth_muscle'))
 #===============================================================================
-
 
 
 
@@ -160,7 +178,7 @@ DotPlot2(ging_epi,
   guides(color='none')
 #===============================================================================
 
-# ORA, ging_epi
+### ORA, ging_epi
 #===============================================================================
 ging_epi <- JoinLayers(ging_epi)
 
@@ -411,7 +429,7 @@ DotPlot2(ging_endo,
 
 #===============================================================================
 
-# ORA, ging_endo
+### ORA, ging_endo
 #===============================================================================
 ging_endo <- JoinLayers(ging_endo)
 Idents (ging_endo) <- 'condition'
@@ -606,7 +624,7 @@ ging_myeloid <- RunUMAP(ging_myeloid,
                         dims=1:10)
 #===============================================================================
 
-# ORA, ging_myeloid
+### ORA, ging_myeloid
 #===============================================================================
 ging_myeloid <- JoinLayers(ging_myeloid)
 
@@ -638,4 +656,5 @@ ging_myeloid_ora_simp <- simplify(ging_myeloid_ora,
 clusterProfiler::dotplot(ging_myeloid_ora_simp,
                          showCategory = 10)
 #===============================================================================
+
 

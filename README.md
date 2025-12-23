@@ -1,4 +1,4 @@
-# Vitamin-D Murine Microbiome and Transcriptomics Study
+# Vitamin-D Murine Microbiome and Single-cell Analysis Study
 
 ## Overview
 This respository contains code and analysis to replicate the findings in Ryan, et al.
